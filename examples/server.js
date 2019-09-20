@@ -30,6 +30,8 @@ const router = express.Router()
 
 registerExtendRouter()
 
+registerInterceptorsRouter()
+
 router.get('/simple/get', function(req, res) {
   res.json({
     msg: 'hello world'
@@ -124,5 +126,11 @@ function registerExtendRouter() {
         age: 18
       }
     })
+  })
+}
+
+function registerInterceptorsRouter() {
+  router.get('/interceptor/get', function(req, res) {
+    res.end('hello')
   })
 }
