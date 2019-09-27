@@ -32,6 +32,8 @@ registerExtendRouter()
 
 registerInterceptorsRouter()
 
+registerConfigRouter()
+
 router.get('/simple/get', function(req, res) {
   res.json({
     msg: 'hello world'
@@ -132,5 +134,11 @@ function registerExtendRouter() {
 function registerInterceptorsRouter() {
   router.get('/interceptor/get', function(req, res) {
     res.end('hello')
+  })
+}
+
+function registerConfigRouter() {
+  router.post('/config/post', function(req, res) {
+    res.json(req.body)
   })
 }
