@@ -2,11 +2,11 @@
 set -e
 echo "Enter release version: "
 read VERSION
-read -p "releasing $VERSION  - are you sure(Y/N)" -n 1 -r
+read -p "Releasing $VERSION  - are you sure?(y/n)" -n 1 -r
 echo # move to a new line
 if [[ $REPLY =~ ^[Yy]$ ]]
 then
-  echo "releasing version..."
+  echo "releasing $VERSION..."
 
   # commit
   git add -A
